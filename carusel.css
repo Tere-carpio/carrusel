@@ -4,7 +4,7 @@ body{
     line-height: 1.7;
     color: chocolate;
     background-color: bisque;
-    padding: 1.5rem 2rem;
+    padding: 1em 1.5em;
 }
 
 main{
@@ -32,7 +32,7 @@ img{
 .galeria{
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 0.25rem;
     transform-style: preserve-3d; /* Habilitar el contexto 3D para los hijos */
 }
 
@@ -68,9 +68,20 @@ img{
     transition: 0.2s all;
 }
 
+.panel-galeria::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: 30rem;
+    /* Degradado de arriba (blanco) a abajo (transparente) */
+    background: linear-gradient(to bottom, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 80%);
+    z-index: 2;
+}
+
 .panel-galeria img:hover{
     border-radius: 30rem;
-    transform: scale(1.3);
+    transform: scale(1.2);
     box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.3);
     z-index: 5; /* Asegurar que el panel activo esté por encima de los demás */
     opacity: 1;
@@ -78,12 +89,21 @@ img{
 
 /*derecha del hover*/
 .panel-galeria:hover ~ .panel-galeria {
-    transform: perspective(400px) rotate(-20deg) ;
+    transform: perspective(400px) scale(0.9) rotate(-20deg) ;
     opacity: 0.5;
 }
 /*izquierda del hover*/
 .galeria:hover .panel-galeria:not(:hover):not(:hover ~ .panel-galeria) {
-    transform: perspective(400px) rotate(20deg);
+    transform: perspective(400px) scale(0.9) rotate(20deg);
     opacity: 0.5;
 }
 
+
+
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
