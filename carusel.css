@@ -1,0 +1,89 @@
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: chocolate;
+    background-color: bisque;
+    padding: 1.5rem 2rem;
+}
+
+main{
+    max-width: 100%;
+    margin-inline: auto; /* Centrar horizontalmente */
+    text-align: justify;
+}
+
+h1{
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+h2{
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 4em;
+}
+
+img{
+    max-width: 100%;
+    border-radius: 30rem;
+}
+
+.galeria{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    transform-style: preserve-3d; /* Habilitar el contexto 3D para los hijos */
+}
+
+.panel-galeria{
+    flex: 1;
+    aspect-ratio: 1/1.5;
+    cursor: pointer;
+    transition: 0.2s all; /* Transición suave para transformaciones */
+    position: relative;
+
+}
+
+/*Efecto degradado*/
+.panel-galeria::after{
+    content: "";
+    position: absolute;
+    inset: 0; /* Cubrir todo el contenedor */
+    pointer-events: none; /* Permitir interacción con la imagen */
+    border-radius: 30rem;
+    background: linear-gradient(to bottom rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 80%);
+    z-index: 2;
+}
+
+.panel-galeria img{
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1.5;
+    opacity: 1;
+    border-radius: 30rem;
+    position: relative;
+    z-index: 1;
+    object-fit: cover; /* Mantener la proporción y recortar si es necesario */
+    transition: 0.2s all;
+}
+
+.panel-galeria img:hover{
+    border-radius: 30rem;
+    transform: scale(1.3);
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.3);
+    z-index: 5; /* Asegurar que el panel activo esté por encima de los demás */
+    opacity: 1;
+}
+
+/*derecha del hover*/
+.panel-galeria:hover ~ .panel-galeria {
+    transform: perspective(400px) rotate(-20deg) ;
+    opacity: 0.5;
+}
+/*izquierda del hover*/
+.galeria:hover .panel-galeria:not(:hover):not(:hover ~ .panel-galeria) {
+    transform: perspective(400px) rotate(20deg);
+    opacity: 0.5;
+}
+
