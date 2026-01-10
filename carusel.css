@@ -5,6 +5,7 @@ body{
     color: chocolate;
     background-color: bisque;
     padding: 1em 1.5em;
+    cursor: url(img/mouse1.png), all-scroll;
 }
 
 main{
@@ -29,7 +30,22 @@ img{
     border-radius: 30rem;
 }
 
+.mouse{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    transform: translate(-8.4rem, -6.5rem, 0) scale(0.082);
+    overflow: hidden;
+    display: flex;
+
+    z-index: 1000;
+    pointer-events: none;
+}
 .galeria{
+    cursor: url(img/mouse6.png), auto;
     display: flex;
     justify-content: center;
     gap: 0.25rem;
@@ -39,10 +55,9 @@ img{
 .panel-galeria{
     flex: 1;
     aspect-ratio: 1/1.5;
-    cursor: pointer;
     transition: 0.2s all; /* Transición suave para transformaciones */
     position: relative;
-
+    
 }
 
 /*Efecto degradado*/
@@ -54,6 +69,7 @@ img{
     border-radius: 30rem;
     background: linear-gradient(to bottom rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 80%);
     z-index: 2;
+    
 }
 
 .panel-galeria img{
@@ -66,6 +82,7 @@ img{
     z-index: 1;
     object-fit: cover; /* Mantener la proporción y recortar si es necesario */
     transition: 0.2s all;
+    
 }
 
 .panel-galeria::after{
@@ -85,6 +102,7 @@ img{
     box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.3);
     z-index: 5; /* Asegurar que el panel activo esté por encima de los demás */
     opacity: 1;
+    
 }
 
 /*derecha del hover*/
