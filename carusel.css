@@ -2,15 +2,20 @@
     margin: 0;
     padding: 0;
 }
+html{
+    scroll-behavior: smooth;
+}
 body{
     min-height: 100vh;
     font-family: "Inter", sans-serif;
     font-size: 1rem;
     line-height: 1.7;
     color: rgba(39, 43, 44,1);
-    background-color: #ffedc0;
+    background-color: #a7b9a7cc;
     cursor: url(img/mouse1.png), all-scroll;
 }
+
+
 li .logo{
     z-index: 1000;
     width: 60px;
@@ -20,6 +25,10 @@ nav{
     background-color: rgba(250, 248, 247, 0.6);
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
     transition: background-color 0.4s ease;
+    position: sticky;
+    top: 0;
+    z-index: 2000; /* por encima de todo todo */
+    backdrop-filter: blur(8px);
 }
 nav ul{
     width: 100%;
@@ -47,7 +56,6 @@ nav a:hover{
     transition: 0.3s;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 2rem;
-    backdrop-filter: blur(20px);
 }
 nav li:first-child{ /*no puedo utilizar la clase logo por que no se va a la esquina, no se por que :*/
     margin-right: auto;  
@@ -70,12 +78,11 @@ nav li:first-child{ /*no puedo utilizar la clase logo por que no se va a la esqu
     align-items: flex-start;
     justify-content: flex-start;
 
-    transition: right 0.8s ease, opacity 0.8s ease, background-color 0.4s ease;
-    opacity: 0;
+    
 }
 .vertical.active{
     right: 0; /* lo meto en la pantalla */
-    opacity: 1;
+    backdrop-filter: blur(8px);
 }
 .vertical li{
     width: calc(100% - 24px);
@@ -97,8 +104,6 @@ nav li:first-child{ /*no puedo utilizar la clase logo por que no se va a la esqu
 }
 nav a.circulo{
     justify-content: flex-start;
-    background-color: 2rem;
-    transition: background-color 0.4s ease;
 }
 nav.coloreado a.circulo, .vertical.coloreado{
     background-color: rgba(250, 248, 247, 0.8);
@@ -116,6 +121,40 @@ nav a.circulo:hover{
     backdrop-filter: blur(20px);
 }
 
+.hero{
+    text-align: center;
+    padding: 4rem 1.5em 2rem 1.5em;
+    font-size: 100%;
+    font-weight: 500;
+}
+.wave{
+    display: inline-block;
+    font-weight: 600;
+}
+.wave .ola{
+    display: inline-block;
+    transform-origin: 50% 70%;
+    transition: transform 180ms ease;
+}
+.wave .ola.is-active{
+        transform: translateY(-7px) scale(1.12);
+}
+.wave .ola.is-near{
+    transform: translateY(-4px) scale(1.05);
+}
+.wave .ola.is-far{
+    transform: translateY(-2px) scale(1.02);
+}
+.wave .space{
+    width: 0.25em;
+}
+
+@keyframes wave-animation {
+  0%   { transform: translateY(0) scale(1); }
+  35%  { transform: translateY(-6px) scale(1.08); }
+  70%  { transform: translateY(2px) scale(0.98); }
+  100% { transform: translateY(0) scale(1); }
+}
 
 main{
     max-width: 100%;
@@ -140,7 +179,7 @@ h2{
     margin-bottom: 4em;
 }
 
-img{
+.panel-galeria img{
     max-width: 100%;
     border-radius: 30rem;
 }
@@ -226,8 +265,6 @@ img{
     margin-top: 2rem;
 }
 
-
-
 @media (max-width: 768px){
     .hide{
         display: none;
@@ -237,4 +274,124 @@ img{
     .vertical{
         width: 100%;
     }
+}
+@media (prefers-reduced-motion: reduce){
+  *{ transition: none !important; }
+}
+
+/*expositor fotos*/
+.movimiento{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.movimiento .container{
+    width: 100vw;
+    max-width: none;
+    padding: 0;
+    margin: 0;
+}
+.container .items{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+.divider{
+    position: relative;
+    width: 1px;
+    height: 100vh;
+    background-color: #262a2c66;
+}
+.item{
+    position: relative;
+    width: 20vw ;
+    height: 100vh;
+    overflow: hidden;
+}
+.items{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+.imgoverlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #a7b9a7cc;
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.itemwrapper:hover .imgoverlay{
+   top: -100%; 
+}
+.item img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.2);
+    transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.itemwrapper:hover img{
+    transform: scale(1);
+}
+.itemcopy{
+    position: absolute;
+    width: 100%;
+    height: 100% ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8em 2em;
+    text-transform: uppercase;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    line-height: 60px;
+    color: #ffedc0;
+    z-index: 2;
+    transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.itemname{
+    font-size: 40px; 
+}
+.itemname span{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    line-height: 120%;
+    text-transform: uppercase;
+    display: block;
+}
+.itemwrapper:hover .itemcopy{
+    color: #ffedc0;
+}
+.itemcopy .id{
+    color: ffedc0;
+    font-size: 150px;
+}
+
+
+
+
+/*Proyectos*/
+.blastic{
+    background-color: #aba7b3;
+    box-sizing: border-box;
+}
+.navblastic{
+    background-color: #aba7b399;
+    backdrop-filter: blur(8px);
+    color: #262a2c;
+}
+.navblastic a{
+    color: #262a2c;
+}
+.blastic h1{
+    font-size: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 2rem;
 }

@@ -72,3 +72,35 @@ function colorRandom() {
     resetAmbos();
   });
 });
+
+
+// Efecto ola en el texto
+const waveContainers = document.querySelectorAll(".wave");
+  console.log("wave encontrados:", waveContainers.length);
+
+  waveContainers.forEach(contenedor => {
+    const chars = Array.from(contenedor.querySelectorAll(".ola"));
+
+    function limpiar() {
+      chars.forEach(ola => ola.classList.remove("is-active", "is-near", "is-far"));
+    }
+
+    chars.forEach((ola, i) => {
+      if (ola.classList.contains("space")) return;
+
+      ola.addEventListener("mouseenter", () => {
+        limpiar();
+        ola.classList.add("is-active");
+
+        // vecinos 1
+        if (chars[i - 1] && !chars[i - 1].classList.contains("space")) chars[i - 1].classList.add("is-near");
+        if (chars[i + 1] && !chars[i + 1].classList.contains("space")) chars[i + 1].classList.add("is-near");
+
+        // vecinos 2
+        if (chars[i - 2] && !chars[i - 2].classList.contains("space")) chars[i - 2].classList.add("is-far");
+        if (chars[i + 2] && !chars[i + 2].classList.contains("space")) chars[i + 2].classList.add("is-far");
+      });
+    });
+
+    contenedor.addEventListener("mouseleave", limpiar);
+  });
