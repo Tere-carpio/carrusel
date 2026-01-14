@@ -1,7 +1,7 @@
 
 /*mi querido navbar...*/ 
 
-// Mostrar y ocultar navbar vertical
+// se ve y se deja de ver el navabr
 function showVertical() {
     const sidebar = document.querySelector('.vertical')
     sidebar.classList.add('active');
@@ -10,7 +10,7 @@ function hideVertical() {
     const sidebar = document.querySelector('.vertical')
     sidebar.classList.remove('active');
 }
-//coloriiines aleatorios en nav y vertical al hacer hover en links (excepto el logo)
+//hace coloriiines aleatorios con array en nav y vertical al hacer hover en links (excepto el logo)
 document.addEventListener("DOMContentLoaded", () => {
 
   const colores = [    
@@ -26,7 +26,7 @@ function colorRandom() {
   const nav = document.querySelector("nav");
   const vertical = document.querySelector(".vertical");
 
-  // Aplica el mismo color a ambos contenedores
+  // Aplica el mismo color a los dos 
   function setColorAmbos(color) {
     if (nav) {
       nav.classList.add("coloreado");
@@ -37,8 +37,7 @@ function colorRandom() {
       vertical.style.backgroundColor = color;
     }
   }
-
-  // Resetea ambos contenedores
+  // Resetea los dos
   function resetAmbos() {
     if (nav) {
       nav.classList.remove("coloreado");
@@ -49,8 +48,7 @@ function colorRandom() {
       vertical.style.backgroundColor = "";
     }
   }
-
-  // Hover sobre links (en horizontal y vertical), excepto .circulo
+  // Hace hover sobre links (en horizontal y vertical), excepto .circulo
   document.querySelectorAll("nav a:not(.circulo)").forEach(link => {
     link.addEventListener("mouseenter", () => {
       const c = colorRandom();
@@ -74,7 +72,7 @@ function colorRandom() {
 });
 
 
-// Efecto ola en el texto
+// Efecto ola en los spans de mi portfolio
 const waveContainers = document.querySelectorAll(".wave");
   console.log("wave encontrados:", waveContainers.length);
 
@@ -87,20 +85,11 @@ const waveContainers = document.querySelectorAll(".wave");
 
     chars.forEach((ola, i) => {
       if (ola.classList.contains("space")) return;
-
       ola.addEventListener("mouseenter", () => {
         limpiar();
         ola.classList.add("is-active");
-
-        // vecinos 1
-        if (chars[i - 1] && !chars[i - 1].classList.contains("space")) chars[i - 1].classList.add("is-near");
-        if (chars[i + 1] && !chars[i + 1].classList.contains("space")) chars[i + 1].classList.add("is-near");
-
-        // vecinos 2
-        if (chars[i - 2] && !chars[i - 2].classList.contains("space")) chars[i - 2].classList.add("is-far");
-        if (chars[i + 2] && !chars[i + 2].classList.contains("space")) chars[i + 2].classList.add("is-far");
+        //hice una cosa que era para que tuviera mas efecto de ola, pero realmente queda mejor asi. Movia los elementos cerca de la letra sobre la que se hace hover
       });
     });
-
     contenedor.addEventListener("mouseleave", limpiar);
   });

@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="bienvenida">  </div> <!--he puesto esto para que vaya arriba, por que antes no habia margen de arriba para bienvenida cuando le dabas para que te llevara. Esto es por que estaba detras del nav y no lo cuenta como otro espacio, esta por encima. Por eso este div se pone encima del nav-->
     <nav>
         <!--este es el menu de navegacion del ordenador-->
         <ul>
@@ -71,8 +72,8 @@
             <li class="hideOnMobile"><a  href="#contacto">contacta</a></li>
         </ul>
     </nav>
-
-    <section id="bienvenida" class="hero"> <!--hero es como se llama a los mensajes cachis del principio-->
+    
+    <section  class="hero"> <!--hero es como se llama a los mensajes cachis del principio-->
         <div class="animacion">
             <h1 class="hero1">
             Bienvenida a
@@ -84,6 +85,25 @@
                 </span>
             </div>
 
+        </div>
+    </section>
+    <section class="expositor">
+        <div class="galeria">
+            <div class="panel-galeria">
+                <img src="img/cadenza_web.png" alt="Cadenza, botella de vino">
+            </div>
+            <div class="panel-galeria">
+                <img src="img/ragaire_web.png" alt="Ragaire, asiento de MDF">
+            </div>
+            <div class="panel-galeria">
+                <img src="img/osoba_web.png" alt="Osoba, expositor circular">
+            </div>
+            <div class="panel-galeria">
+                <img src="img/besoté_web.png" alt="Besoté, zapato de tacón">
+            </div>
+            <div class="panel-galeria">
+                <a href="proyectos.html"><img src="img/blastic_web.png" alt="Blastic, bolso de mano de plástico hecho a crochet"></a>
+            </div>
         </div>
     </section>
 
@@ -151,47 +171,94 @@
     </section>      
         
     </div>
-    <main>
-        <h1>Carusel de productos</h1>
-        <h2>Productos destacados</h2>
-        <div class="galeria">
-            <div class="panel-galeria">
-                <img src="img/cadenza_web.png" alt="Cadenza, botella de vino">
-            </div>
-            <div class="panel-galeria">
-                <img src="img/ragaire_web.png" alt="Ragaire, asiento de MDF">
-            </div>
-            <div class="panel-galeria">
-                <img src="img/osoba_web.png" alt="Osoba, expositor circular">
-            </div>
-            <div class="panel-galeria">
-                <img src="img/besoté_web.png" alt="Besoté, zapato de tacón">
-            </div>
-            <div class="panel-galeria">
-                <a href="proyectos.html"><img src="img/blastic_web.png" alt="Blastic, bolso de mano de plástico hecho a crochet"></a>
-            </div>
-        </div>
-    </main>
-    <div id="sobremi" class="sobremi">
+    
+    <section id="sobremi" class="sobremi">
         <h1>Sobre mí</h1>
-        <img src="img/yo_web.png" alt="foto mia" class="sobremi_img">
-        <p>Hola, soy Teresa Morales, estudiante de Diseño Experimental en la Universidad de El Salvador. Me apasiona crear diseños innovadores y funcionales que mejoren la vida cotidiana. Este carrusel presenta algunos de mis productos destacados, cada uno diseñado con atención al detalle y un enfoque en la estética y la usabilidad. ¡Gracias por visitar mi portafolio!</p>
-
-    </div>
-    <div id="cadenza" class="proyecto1">
-        <h1>Cadenza</h1>
-        <h2>2023-2024</h2>
-        <img src="img/cadenza_web.png" alt="">
-        <p>Este proyecto consiste en una botella de vino con un diseño innovador y funcional, ideal para eventos especiales.</p>
-        <div class="grid">
-            
+        <div class="smgrupo">
+            <div class="sobremi_img">
+                <img src="img/yo_web.png" alt="">
+            </div>
+            <div class="smdetalle">
+                <div class="smtitulo">
+                    <h2>14.06.2004</h2>
+                    <button>proyectos personales</button>
+                </div>
+                <div class="sobremi_text">
+                    <p>
+                        Creo que me define una ilusión constante por aprender y crear. Más que optimismo, es curiosidad y expectación por descubrir nuevas formas de mirar y hacer.
+                        Al enfrentar un nuevo proyecto o trabajo, procuro hacerlo mío, incluso cuando me desafía o no es lo que más me atrae al principio. Lo afronto con ilusión por aprender y por retarme a mí misma.
+                        Como diseñadora de producto, busco unir técnica, humanidad, sostenibilidad y funcionalidad en cada proyecto.
+                    </p>
+                </div>
+            </div>
         </div>
-    </div>
-    <section class="sobremi">
-
-
-
     </section>
+
+    <section id="cadenza" class="cadenza">
+        <h1>Blastic</h1>
+        <div class="cgrupo row">
+            <div class="cdetalle col-7">
+                <div class="ctitulo">
+                    <h2>2022.2023</h2> 
+                    <h3>Proyecto mixto</h3> 
+                    <h3 class="ultimo">Concurso</h3>
+                    <a href="proyectos.html"><button>saber más</button></a>
+                </div>
+                <div class="cadenza_text">  
+                    <p> Cadenza fue desarrollado para los Verallia Design Awards, un concurso internacional de diseño de envases de vidrio. Inspirada en el solo musical que da nombre al proyecto, la botella busca transmitir ritmo, elegancia y armonía a través de sus curvas y líneas.
+                    </p>
+                </div>
+            </div>
+            <div class="cadenza_img col-5">
+                <img src="img/cadenza_web.png" alt="foto cadenza">
+            </div>
+        </div>
+    </section>
+
+    <section id="ragaire" class="ragaire">
+        <h1>Ragaire</h1>
+        
+        <div class="rgrupo row">
+            <div class="rdetalle col-7">
+                <div class="rtitulo">
+                    <h2>2023.2024</h2> 
+                    <h3>Proyecto solitario</h3> 
+                    <h3 class="ultimo">Startup</h3>
+                    <a href="proyectos.html"><button class="boton"> saber más</button></a>
+                </div>
+                <div class="ragaire_text">
+                    <p>
+                        Ragaire es un asiento que parte de la idea de la conversación como puente hacia la amistad. Cada pieza representa un elemento de esa comunicación: apoyo, reflexión y conexión. Proyecto desarrollado con una start-up en 2023.
+                    </p>
+                </div>
+            </div>
+            <div class="ragaire_img col-5">
+                <img src="img/ragaire_web.png" alt="foto ragaire">
+            </div>
+        </div>
+    </section>
+
+    <section id="blastic" class="blastic">
+        <h1>Blastic</h1>
+        <div class="bgrupo row">
+            <div class="bdetalle col-7">
+                <div class="btitulo">
+                    <h2>2023.2024</h2> 
+                    <h3>Proyecto solitario</h3> 
+                    <h3 class="ultimo">Feria</h3>
+                    <a href="proyectos.html"><button>saber más</button></a>
+                </div>
+                <div class="blastic_text">  
+                    <p> Ragaire es un asiento que parte de la idea de la conversación como puente hacia la amistad. Cada pieza representa un elemento de esa comunicación: apoyo, reflexión y conexión. Proyecto desarrollado con una start-up en 2023.
+                    </p>
+                </div>
+            </div>
+            <div class="blastic_img col-5">
+                <img src="img/blastic_web.png" alt="foto blastic">
+            </div>
+        </div>
+    </section>
+
     <section id="contacto" class="contacto">
         <h1>¿Quedamos?</h1>
         <div>

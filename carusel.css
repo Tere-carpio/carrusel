@@ -13,14 +13,38 @@ body{
     color: #f9f7f7;
     background-color: #a7b9a7cc;
     cursor: url(img/mouse4.png), all-scroll;
+    overflow-x: hidden;
+   
 }
 
+main{
+    max-width: 100%;
+    margin-inline: auto;
+    text-align: justify;
+    padding: 1rem 1.5em;
+}
+.container-fluid{
+    background-color: rgba(169, 181, 190, 0.8);
+    color: rgb(250, 248, 247);
+}
+h1{
+    font-size: 3rem;
+    font-weight: 600;
+    font-family: "Darumadrop One", sans-serif;
+}
+h2{
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 4em;
+}
 
 li .logo{
     z-index: 1000;
     width: 60px;
     height: 60px;
 }
+
+/*el maravilloso nabar*/
 nav{
     background-color: rgba(250, 248, 247, 0.6);
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
@@ -164,29 +188,7 @@ nav a.circulo:hover{
   100% { transform: translateY(0) scale(1); }
 }
 
-main{
-    max-width: 100%;
-    margin-inline: auto; /* Centrar horizontalmente */
-    text-align: justify;
-    padding: 1rem 1.5em;
-}
-.container-fluid{
-    background-color: rgba(169, 181, 190, 0.8);
-    color: rgb(250, 248, 247);
-}
-
-h1{
-    font-size: 3rem;
-    font-weight: 600;
-    font-family: "Inter", light, sans-serif;
-}
-
-h2{
-    font-size: 1rem;
-    font-weight: 500;
-    margin-bottom: 4em;
-}
-
+/*Carrusel/panel principio (forma parte del hero tambien un poco)*/
 .panel-galeria img{
     max-width: 100%;
     border-radius: 30rem;
@@ -196,29 +198,14 @@ h2{
     display: flex;
     justify-content: center;
     gap: 0.25rem;
-    transform-style: preserve-3d; /* Habilitar el contexto 3D para los hijos */
 }
-
 .panel-galeria{
     flex: 1;
     aspect-ratio: 1/1.5;
-    transition: 0.2s all; /* Transición suave para transformaciones */
+    transition: 0.2s all; 
     position: relative;
     
 }
-
-/*Efecto degradado*/
-.panel-galeria::after{
-    content: "";
-    position: absolute;
-    inset: 0; /* Cubrir todo el contenedor */
-    pointer-events: none; /* Permitir interacción con la imagen */
-    border-radius: 30rem;
-    background: linear-gradient(to bottom rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 80%);
-    z-index: 2;
-    
-}
-
 .panel-galeria img{
     display: block;
     width: 100%;
@@ -227,22 +214,10 @@ h2{
     border-radius: 30rem;
     position: relative;
     z-index: 1;
-    object-fit: cover; /* Mantener la proporción y recortar si es necesario */
+    object-fit: cover; /* Mantiene la proporción de mi foto y recorta (como Indesign) */
     transition: 0.2s all;
     
 }
-
-.panel-galeria::after{
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    border-radius: 30rem;
-    /* Degradado de arriba (blanco) a abajo (transparente) */
-    background: linear-gradient(to bottom, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 80%);
-    z-index: 2;
-}
-
 .panel-galeria img:hover{
     border-radius: 30rem;
     transform: scale(1.2);
@@ -251,25 +226,20 @@ h2{
     opacity: 1;
     
 }
-
-/*derecha del hover*/
 .panel-galeria:hover ~ .panel-galeria {
     transform: perspective(400px) scale(0.9) rotate(-20deg) ;
     opacity: 0.5;
 }
-/*izquierda del hover*/
 .galeria:hover .panel-galeria:not(:hover):not(:hover ~ .panel-galeria) {
     transform: perspective(400px) scale(0.9) rotate(20deg);
     opacity: 0.5;
 }
-
-.grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    margin-top: 2rem;
+.expositor{
+    margin: auto;
+    padding: 3rem 4rem;
+    box-sizing: border-box;
+    padding-bottom: 8rem;
 }
-
 @media (max-width: 768px){
     .hide{
         display: none;
@@ -281,7 +251,7 @@ h2{
     }
 }
 
-/*expositor fotos*/
+/*expositor fotos loco loco*/
 .movimiento{
     margin: 0;
     padding: 0;
@@ -338,7 +308,6 @@ h2{
     transform: scale(1.2);
     transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-
 .itemwrapper:hover img{
     transform: scale(1);
 }
@@ -373,7 +342,7 @@ h2{
     color: #f9f7f7;
 }
 .itemcopy .id{
-    color: ffedc0;
+    color: #ffedc0;
     font-size: 5rem;
 }
 .items a{
@@ -382,26 +351,340 @@ h2{
     cursor: url(img/mouse6.png), all-scroll;
 }
 
-/*Sobre mi*/
+/*Sobre mi sin bootstrap*/
 
 .sobremi h1{
-    font-family: "Darumadrop One", sans-serif;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
     color: #f9f7f7;
 }
 .sobremi{
-    background-color: #768876 ;
-    padding: 4rem 4rem;
+    background-color: #76887666 ;
+    padding: 2rem 5rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    margin: 0 auto;
+    box-sizing: border-box;
+    margin-bottom: 4rem;
 }
 .sobremi_img{
-    width: 60vw;
+    width: auto;
     height: 70vh;
     object-fit: cover;
+    padding-left: 2rem;    
 }
-.sobremi p{
+.smgrupo{
+    display: flex; /*asi todo lo del bloque es horizontal (por fin)*/
+    align-items: flex-end; 
+    justify-content: space-around; /*por toda la linea*/
+    gap: 3rem;
+}
+.sobremi_img img{
+    width: 60vh;
+    height: 70vh;
+    display: block;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+.sobremi_text{
+    flex: 1;
+    flex-wrap: wrap; /*para que vaya a la next line*/
+    font-size: 1rem;
+    text-align: justify;
+}
+.smdetalle{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 1.5rem;
+    flex: 1;
+    padding-left: 3rem;
+}
+.smtitulo{
+    padding: 0;
+    margin: 0; 
+}
+.smtitulo button{
+    background-color: #f9f7f766;
+    border-radius: 2rem;
+    border: none;
+    color: #262a2c;
+    font-size: 1rem;
+    font-weight: 500;
+    display: block;
+    align-items: center;
+    padding: 0.5rem 0.5rem;
+    width: 13rem;
+    box-shadow: 0 4px 10px #262a2c;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    font-family: "Darumadrop One", sans-serif;
+    justify-content: center;
+}
+.smtitulo button:hover{
+    box-shadow: 0 8px 20px #262a2c;
+    transform: translateY(-2px);
+    background-color: #f9f7f7cc;    
+    cursor: url(img/mouse6.png), all-scroll;
+    backdrop-filter: blur(20px);
+}
+.smtitulo h2{
+    font-weight: 200;
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+@media (max-width: 1100px){
+    .smgrupo{
+        flex-direction: column; /*antes queria que estuvieran uno al lado del otro, ahora quiero que se ponga debajo*/
+        align-items: flex-start;
+    }
+    .sobremi_text{
+        width: 100%;
+        font-size: 0.9rem;
+    }
+    .sobremi_img img{
+        height: auto;
+    }
+    .smtitulo h2{
+    margin: 2rem 0;
+    }
+    .smtitulo{
+    padding: 2rem 0;
+    display: block;
+   
+    } 
+    .smdetalle{
+        align-items: flex-start;
+        text-align: start;
+    }
     
 }
 
+/*Blastic con bootsraps*/
+
+.blastic{
+    background-color: #aba7b3;
+    margin: 0 auto;
+    padding: 2rem 5rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    color: #f9f9f9;
+}
+.bdetalle{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.btitulo{
+    align-items: center;
+    justify-content: center;
+}
+.btitulo h2{
+    font-weight: 500;
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+.btitulo h3{
+    font-weight: 300;
+    font-size: 1rem;
+    font-style: italic;
+}
+.btitulo .ultimo{
+    padding-bottom: 1.2rem;
+}
+.blastic h1{
+    margin-bottom: 1rem;
+}
+.blastic_img img{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+.blastic_text{
+    display: block;
+    width: 75%;
+    padding-top: 2rem;
+    font-size: 1rem;
+}
+.btitulo button{
+    background-color: #f9f7f766;
+    border: none;
+    border-radius: 2rem;
+    color: #6b6575;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 0.5rem;
+    width: 10rem;
+    height: 3rem;
+    box-shadow: 0 4px 10px #262a2c;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    font-family: "Darumadrop One", sans-serif;  
+}
+.btitulo a{
+    text-decoration: none;
+}
+.btitulo button:hover{
+    box-shadow: 0 8px 20px #262a2c;
+    transform: translateY(-2px);
+    background-color: #f9f7f7cc;
+    cursor: url(img/mouse6.png), all-scroll;
+}
+@media (max-width: 900px){
+    .bgrupo{
+        flex-direction: column-reverse; /*asi esta la foto primero*/
+        align-items: flex-start;
+        display: flex;
+    }
+    .blastic_text{
+        width: auto;
+        font-size: 0.9rem;
+        padding:  2rem 1rem;
+    }
+    .blastic h1{
+        margin-bottom: 2rem;
+    }
+    .btitulo h2{
+        margin: 1rem 0;
+        justify-content: flex-end;
+    }
+    .btitulo{
+        display: block;
+        padding:  0 1rem;
+    } 
+    .bdetalle{
+        align-items: flex-start;
+        text-align: start;
+        width: auto;
+    }
+    .blastic_img{
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 1rem 2rem;
+    }
+    .blastic_img img{
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    
+}
+
+/*ragaire division con bootstrap*/
+.ragaire{
+    background-color: #e4a470;
+    margin: 0 auto;
+    padding: 2rem 5rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    color: #ffedc0;
+}
+.rdetalle{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.rtitulo{
+    align-items: center;
+    justify-content: center;
+}
+.rtitulo h2{
+    font-weight: 500;
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+.rtitulo h3{
+    font-weight: 300;
+    font-size: 1rem;
+    font-style: italic;
+}
+.rtitulo .ultimo{
+    padding-bottom: 1.2rem;
+}
+.ragaire h1{
+    margin-bottom: 1rem;
+}
+.ragaire_img img{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+.ragaire_text{
+    display: block;
+    width: 75%;
+    padding-top: 2rem;
+    font-size: 1rem;
+}
+.rtitulo button{
+    background-color: #f9f7f766;
+    border: none;
+    border-radius: 2rem;
+    color: #c1783d;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 0.5rem;
+    width: 10rem;
+    height: 3rem;
+    box-shadow: 0 4px 10px #262a2c;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    font-family: "Darumadrop One", sans-serif;  
+}
+.rtitulo a{
+    text-decoration: none;
+}
+.rtitulo button:hover{
+    box-shadow: 0 8px 20px #262a2c;
+    transform: translateY(-2px);
+    background-color: #f9f7f7cc;
+    cursor: url(img/mouse6.png), all-scroll;
+}
+@media (max-width: 900px){
+    .rgrupo{
+        flex-direction: column-reverse; /*asi esta la foto primero*/
+        align-items: flex-start;
+        display: flex;
+    }
+    .ragaire_text{
+        width: auto;
+        font-size: 0.9rem;
+        padding:  2rem 1rem;
+    }
+    .ragaire h1{
+        margin-bottom: 2rem;
+    }
+    .rtitulo h2{
+        margin: 1rem 0;
+        justify-content: flex-end;
+    }
+    .rtitulo{
+        display: block;
+        padding:  0 1rem;
+    } 
+    .rdetalle{
+        align-items: flex-start;
+        text-align: start;
+        width: auto;
+    }
+    .ragaire_img{
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 1rem 2rem;
+    }
+    .ragaire_img img{
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    
+}
 
 /*Contacta*/
 .contacto{
@@ -412,34 +695,10 @@ h2{
 .contacto h1{
     color: #f9f7f7;
     margin-bottom: 2rem;
-    font-family: "Darumadrop One", sans-serif;
 }
 .contacto p{
     margin-left: 4rem;
     border: #e4a470;
     display: block;
-    background-color: #262a2c; 
     box-sizing: content-box; 
-}
-
-
-/*Proyectos*/
-.blastic{
-    background-color: #aba7b3;
-    box-sizing: border-box;
-}
-.navblastic{
-    background-color: #aba7b399;
-    backdrop-filter: blur(8px);
-    color: #262a2c;
-}
-.navblastic a{
-    color: #262a2c;
-}
-.blastic h1{
-    font-size: 20rem;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding-left: 2rem;
 }
