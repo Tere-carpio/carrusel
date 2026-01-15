@@ -11,7 +11,7 @@ h1{
     font-size: 3rem;
     font-weight: 600;
     font-family: "Darumadrop One", sans-serif;
-    padding-top: 5rem;
+    padding-top: 2rem;
 }
 body{
     background-color: #aba7b3;
@@ -22,65 +22,75 @@ body{
     font-size: 1.5rem; 
     overflow-x: hidden;
 }
-.pbesote{
+.pblastic{
     margin: 0 auto;
     padding: 2rem 5rem;
     padding-top: 1rem;
     padding-bottom: 5rem;
 }
-.pbegrupo{
+.pbgrupo{
     justify-content: start;
     align-items: start;
     display: flex;
     flex-direction: column;
 }
 
-.pbesote h2{
+.pblastic h2{
     font-weight: 700;
     font-size: 1.2rem;
     font-style: italic;
 }
-.pbesote p{
+.pblastic p{
     display: block;
     width: 85%;
     text-align: justify;
     font-size: 1rem;
 }
-.pbesote li{
+.pblastic li{
     font-weight: 500;
     font-size: 1rem;
     padding-bottom: 0;
 }
-.pbetexto{
+.pbtexto{
     height: auto;
 }
-.betitulo{
+.btitulo{
     width: 100%;
     flex-direction: row;
     display: flex;
 }
-.belineas{
+.blineas{
     justify-content: flex-end;
 }
 .joker{
     height: 17rem;
 }
+.colocar1 h2{
+    padding-top: 2rem;
+    padding-left: 3rem;
+}
+.colocar{
+    padding-left: 3rem;
+}
+.bconcepto{
+    padding-top: 1rem;
+}
 
 /*SLIDER*/
-.beslider{
+.bslider{
     width: 100%;
     height: 60vh;
     overflow: hidden;
     position: relative;
 }
-.begaleria{
+.bgaleria{
     display: flex;
     scroll-behavior: smooth;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     height: 100%;
 }
-.begaleria::-webkit-scrollbar{
+.bgaleria::-webkit-scrollbar{
     display: none;
 }
 .id{
@@ -101,7 +111,7 @@ body{
     object-fit: contain;
     display: block;
     border-radius: 2rem;
-    opacity: 0.8;
+    opacity: 0.9;
     
 }
 .id img:hover{
@@ -109,7 +119,7 @@ body{
 }
 
 /*botones slider*/
-.beboton{
+.bboton{
     bottom: 12rem;
     z-index: 10;
     width: 3rem;
@@ -120,23 +130,24 @@ body{
     font-size: 2rem;
     padding-bottom: 2rem;
     color: #6b6575;
-    background: #aba7b366;
+    background-color: #aba7b3cc;
     box-shadow: 0 2px 20px 2px #262a2ccc;
     position: absolute;
     justify-content: center;
     align-items: center; 
+    font-family: "Darumadrop One", sans-serif;
 }
-.beboton:hover{
+.bboton:hover{
     background-color: #aba7b3;
     transform: scale(1.02);
     cursor: url(img/mouse6.png), all-scroll;
 }
-.beboton.antes{
+.bboton.antes{
     left: 2rem;
     right: auto;
     margin-left: 2rem;
 }
-.beboton.despues{ /*se ponen juntos sin espacio por que sino es como si fuera child de*/
+.bboton.despues{ /*se ponen juntos sin espacio por que sino es como si fuera child de*/
     right: 2rem;
     left: auto;
     margin-right: 2rem;

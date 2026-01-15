@@ -22,66 +22,73 @@ body{
     font-size: 1.5rem; 
     overflow-x: hidden;
 }
-.pcadenza{
+.pragaire{
     margin: 0 auto;
     padding: 2rem 5rem;
     padding-top: 1rem;
     padding-bottom: 5rem;
     color: #ffedc0;
 }
-.pcgrupo{
+.prgrupo{
     justify-content: start;
     align-items: start;
     display: flex;
     flex-direction: column;
 }
 
-.pcgrupo h2{
+.prgrupo h2{
     font-weight: 700;
     font-size: 1.2rem;
     font-style: italic;
 }
-.pcadenza p{
+.pragaire p{
     display: block;
-    width: 85%;
+    width: 98%;
     text-align: justify;
     font-size: 1rem;
 }
-.pcadenza li{
+.pragaire li{
     font-weight: 500;
     font-size: 1rem;
     padding-bottom: 0;
 }
-.pctexto{
+.prtexto{
     height: auto;
 }
-.ctitulo{
+.rtitulo{
     width: 100%;
     flex-direction: row;
     display: flex;
 }
-.cbrief{
+.rbrief{
     justify-content: flex-end;
 }
 .joker{
     height: 17rem;
 }
+.colocar1 h2{
+    padding-top: 2rem;
+    padding-left: 3rem;
+}
+.colocar{
+    padding-left: 3rem;
+}
 
 /*SLIDER*/
-.cslider{
+.rslider{
     width: 100%;
     height: 60vh;
     overflow: hidden;
     position: relative;
 }
-.pcgaleria{
+.prgaleria{
     display: flex;
     scroll-behavior: smooth;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     height: 100%;
 }
-.pcgaleria::-webkit-scrollbar{
+.prgaleria::-webkit-scrollbar{
     display: none;
 }
 .id{
@@ -102,15 +109,18 @@ body{
     object-fit: contain;
     display: block;
     border-radius: 2rem;
-    opacity: 0.8;
+    opacity: 0.85;
     
 }
 .id img:hover{
     opacity: 1;
 }
+.rconcepto{
+    padding-top: 4rem;
+}
 
 /*botones slider*/
-.cboton{
+.rboton{
     bottom: 12rem;
     z-index: 10;
     width: 3rem;
@@ -126,18 +136,19 @@ body{
     position: absolute;
     justify-content: center;
     align-items: center;  
+    font-family: "Darumadrop One", sans-serif;
 }
-.cboton:hover{
+.rboton:hover{
     background-color: #ffedc0;
     transform: scale(1.02);
     cursor: url(img/mouse6.png), all-scroll;
 }
-.cboton.antes{
+.rboton.antes{
     left: 2rem;
     right: auto;
     margin-left: 2rem;
 }
-.cboton.despues{ /*se ponen juntos sin espacio por que sino es como si fuera child de*/
+.rboton.despues{ /*se ponen juntos sin espacio por que sino es como si fuera child de*/
     right: 2rem;
     left: auto;
     margin-right: 2rem;

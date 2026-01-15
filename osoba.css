@@ -11,7 +11,7 @@ h1{
     font-size: 3rem;
     font-weight: 600;
     font-family: "Darumadrop One", sans-serif;
-    padding-top: 5rem;
+    padding-top: 2rem;
 }
 body{
     background-color: #a8b4bd;
@@ -40,9 +40,17 @@ body{
     font-size: 1.2rem;
     font-style: italic;
 }
+.colocar1 h2{
+    padding-top: 2rem;
+    padding-left: 3rem;
+}
+.colocar{
+    padding-left: 3rem;
+}
+
 .posoba p{
     display: block;
-    width: 85%;
+    width: 90%;
     text-align: justify;
     font-size: 1rem;
 }
@@ -51,8 +59,9 @@ body{
     font-size: 1rem;
     padding-bottom: 0;
 }
-.potexto{
+.potexto p{
     height: auto;
+    width: 92%;
 }
 .otitulo{
     width: 100%;
@@ -62,8 +71,8 @@ body{
 .olineas{
     justify-content: flex-end;
 }
-.joker{
-    height: 17rem;
+.joker{ /*es un poco chanchullo pero no me funcionaba sino jajajajj el flex-end estaba yendo mal con las col de bootsrap asi que he hecho esta trampilla*/
+    height: 23rem;
 }
 
 /*SLIDER*/
@@ -125,6 +134,7 @@ body{
     position: absolute;
     justify-content: center;
     align-items: center;  
+    font-family: "Darumadrop One", sans-serif;
 }
 .oboton:hover{
     background-color: #a8b4bd;

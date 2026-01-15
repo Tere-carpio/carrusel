@@ -125,7 +125,8 @@ body{
     box-shadow: 0 2px 20px 2px #262a2ccc;
     position: absolute;
     justify-content: center;
-    align-items: center;  
+    align-items: center; 
+    font-family: "Darumadrop One", sans-serif; 
 }
 .cboton:hover{
     background-color: #d9b0a9;
@@ -173,7 +174,7 @@ body{
     height: 100%;
     padding: 0 2rem;
     box-sizing: border-box;
-    background-color: #ffedc066;
+    background-color: #c27f7f66;
 }
 .volver button{
     color: #c27f7f;

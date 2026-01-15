@@ -91,29 +91,57 @@ waveContainers.forEach(contenedor => {
   contenedor.addEventListener("mouseleave", limpiar);
 });
 
-/*silder de las fotos solas de los proyectos*/
-  const track = document.querySelector(".pcgaleria");
-  const prev = document.querySelector(".antes");
-  const next = document.querySelector(".despues");
 
-  prev.addEventListener("click", () => {
-    track.scrollBy({ left: -track.clientWidth, behavior: "smooth" });
-  });
-
-  next.addEventListener("click", () => {
-    track.scrollBy({ left: track.clientWidth, behavior: "smooth" });
-  });
   
-  /*silder de las fotos solas de los proyectos*/
-  const track = document.querySelector(".pogaleria");
-  const prev = document.querySelector(".antes");
-  const next = document.querySelector(".despues");
+  /*silder de las fotos solas de los proyectos OSOBA*/
+  const funcionao = document.querySelector(".pogaleria");
+  const anteso = document.querySelector(".antes");
+  const despueso = document.querySelector(".despues");
 
-  prev.addEventListener("click", () => {
-    track.scrollBy({ left: -track.clientWidth, behavior: "smooth" });
+  anteso.addEventListener("click", () => {
+    funcionao.scrollBy({ left: -funcionao.clientWidth, behavior: "smooth" });
   });
 
-  next.addEventListener("click", () => {
-    track.scrollBy({ left: track.clientWidth, behavior: "smooth" });
+  despueso.addEventListener("click", () => {
+    funcionao.scrollBy({ left: funcionao.clientWidth, behavior: "smooth" });
+  });
+
+  /*silder de las fotos solas de los proyectos BESOTE*/
+  const funcionabe = document.querySelector(".begaleria");
+  const antesbe = document.querySelector(".antes");
+  const despuesbe = document.querySelector(".despues");
+
+  antesbe.addEventListener("click", () => {
+    funcionabe.scrollBy({ left: -funcionabe.clientWidth, behavior: "smooth" });
+  });
+
+  despuesbe.addEventListener("click", () => {
+    funcionabe.scrollBy({ left: funcionabe.clientWidth, behavior: "smooth" });
+  });
+
+  /*silder de las fotos solas de los proyectos rAGAIRE*/
+  const funcionar = document.querySelector(".prgaleria");
+  const antesr = document.querySelector(".antes");
+  const despuesr = document.querySelector(".despues");
+
+  antesr.addEventListener("click", () => {
+    funcionar.scrollBy({ left: -funcionar.clientWidth, behavior: "smooth" });
+  });
+
+  despuesr.addEventListener("click", () => {
+    funcionar.scrollBy({ left: funcionar.clientWidth, behavior: "smooth" });
+  });
+
+  /*silder de las fotos solas de los proyectos rAGAIRE*/
+  const funcionab = document.querySelector(".bgaleria");
+  const antesb = document.querySelector(".antes");
+  const despuesb = document.querySelector(".despues");
+
+  antesb.addEventListener("click", () => {
+    funcionab.scrollBy({ left: -funcionab.clientWidth, behavior: "smooth" });
+  });
+
+  despuesb.addEventListener("click", () => {
+    funcionab.scrollBy({ left: funcionab.clientWidth, behavior: "smooth" });
   });
   
